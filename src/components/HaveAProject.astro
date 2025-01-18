@@ -3,6 +3,10 @@ import { Socials } from "@constants";
 import SocialPill from "./SocialPill.astro";
 import { Mail } from "lucide-react";
 import LinkedIn from "./icons/LinkedIn.astro";
+
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <section
@@ -12,9 +16,11 @@ import LinkedIn from "./icons/LinkedIn.astro";
     <h2
       class="font-bold md:text-5xl text-4xl text-center my-8 md:my-0 text-pretty"
     >
-      ¿ Tienes algún proyecto ?
+      {i18n.HAVE_PROJECT_TITLE}
     </h2>
-    <p class="text-center text-4xl font-semibold mb-2">Trabajemos juntos</p>
+    <p class="text-center text-4xl font-semibold mb-2">
+      {i18n.HAVE_PROJECT_SUBTITLE}
+    </p>
   </div>
   <div class="my-2 flex items-center flex-row">
     <SocialPill
@@ -37,7 +43,7 @@ import LinkedIn from "./icons/LinkedIn.astro";
     >
       <Mail class="size-5 mx-1" />
       <div class="flex items-center">
-        <span class="lg:flex ml-1">Contactame </span>
+        <span class="lg:flex ml-1">{i18n.HAVE_PROJECT_CONTACT} </span>
       </div>
     </SocialPill>
   </div>

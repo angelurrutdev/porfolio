@@ -3,10 +3,17 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"], // Se agrega "./" al path
+      "@/*": ["./src/*"],
       "@constants": ["./constants.ts"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
-  }
+  },
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist"
+  ]
 }

@@ -1,11 +1,15 @@
 ---
-import { Socials, lastupdate } from "@constants";
+import { Socials } from "@constants";
 import SocialPill from "./SocialPill.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
+
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <footer
-  class="group w-full text-sm text-neutral-600 animate-in fade-in-25 dark:text-neutral-400 backdrop-blur-md bottom-0 mt-4 py-4 max-w-2xl md:max-w-5xl font-mono"
+  class="group w-full text-sm text-neutral-600 animate-in fade-in-25 dark:text-neutral-400 backdrop-blur-md bottom-0 mt-4 max-w-2xl md:max-w-5xl font-mono"
 >
   <div class="mx-4 flex items-center justify-between">
     <div class="flex items-center space-x-2">
@@ -27,8 +31,8 @@ import LinkedIn from "./icons/LinkedIn.astro";
         href="https://astro.build/blog/astro-5-beta/"
         rel="noreferrer"
         target="_blank"
-        class="flex items-center space-x-1  text-sm"
-        ><p>Made by Angel using</p>
+        class="flex items-center space-x-1 text-sm"
+        ><p>{i18n.MADE_BY}</p>
         <svg
           viewBox="0 0 256 366"
           xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +51,7 @@ import LinkedIn from "./icons/LinkedIn.astro";
       </a>
     </div>
     <div class="flex items-center space-x-2">
-      <p class="">Ultima actualización: {lastupdate}</p>
+      <p class="">{i18n.LAST_UPDATE}</p>
       <SocialPill
         href={Socials.linkedin_url}
         title={Socials.linkedin_title}
