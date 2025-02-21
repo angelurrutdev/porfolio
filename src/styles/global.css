@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "Geist";
+    src: url("/fonts/Geist.woff2") format("woff2");
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "GeistMono";
+    src: url("/fonts/GeistMonoVF.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gambarino";
+    src: url("/fonts/Gambarino-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+  }
+
+
+  @import "tailwindcss";
+
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@theme {
+--font-sans: 'Geist', sans-serif;
+--font-mono: 'GeistMono', monospace;
+--font-gambarino: 'Gambarino', sans-serif;
+}
