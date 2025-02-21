@@ -11,8 +11,8 @@ import LanguageSelector from "./LanguageSelector.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 
-const CV_ENGLISH = "/CV_Angel_Urrutia(English)";
-const CV_SPANISH = "/CV_Angel_Urrutia(Spanish)";
+const CV_ENGLISH = "/CV_Angel_Urrutia(English).pdf";
+const CV_SPANISH = "/CV_Angel_Urrutia(Spanish).pdf";
 // Obtener el CV mediante la URL
 const currentURL = new URL(Astro.request.url);
 const mostrarEN = currentURL.pathname.startsWith("/en/");
